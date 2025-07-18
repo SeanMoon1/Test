@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문승연 | 포트폴리오 키워드 카드</title>
+  <style>
+    :root {
+      --main: #667eea;   /* 메인 블루 */
+      --sub: #764ba2;    /* 서브 퍼플 */
+      --white: #fff;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pretendard', 'Arial', sans-serif;
+      background: var(--white);
+      color: var(--main);
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 32px 16px 0 16px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+      color: var(--main);
+      font-weight: 800;
+    }
+    .subtitle {
+      text-align: center;
+      color: var(--sub);
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+      font-weight: 500;
+    }
+    .keyword-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .keyword-card {
+      width: 220px;
+      height: 140px;
+      perspective: 800px;
+      cursor: pointer;
+      position: relative;
+      background: none;
+    }
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0; top: 0;
+      transition: transform 0.5s cubic-bezier(.4,2,.6,1);
+      transform-style: preserve-3d;
+    }
+    .keyword-card.flipped .card-inner,
+    .keyword-card:focus .card-inner,
+    .keyword-card:active .card-inner,
+    .keyword-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0; top: 0;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(102,126,234,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: 700;
+      background: var(--white);
+      color: var(--main);
+      padding: 18px;
+      text-align: center;
+      border: 2px solid var(--main);
+      transition: box-shadow 0.2s, border 0.2s;
+    }
+    .card-front {
+      z-index: 2;
+      background: linear-gradient(90deg, var(--main) 0%, var(--sub) 100%);
+      color: var(--white);
+      font-size: 1.18rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      border: none;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      background: var(--white);
+      color: var(--sub);
+      font-size: 1rem;
+      font-weight: 500;
+      z-index: 1;
+      border: 2px solid var(--sub);
+    }
+    .keyword-card:focus {
+      outline: 2px solid var(--sub);
+    }
+    .keyword-card:hover, .keyword-card.flipped {
+      box-shadow: 0 8px 32px rgba(102,126,234,0.18);
+    }
+    @media (max-width: 900px) {
+      .keyword-cards { gap: 16px; }
+      .keyword-card { width: 45vw; min-width: 160px; height: 120px; }
+    }
+    @media (max-width: 600px) {
+      .keyword-cards { flex-direction: column; align-items: center; }
+      .keyword-card { width: 90vw; min-width: 120px; height: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>문승연 포트폴리오 키워드</h1>
+    <div class="subtitle">기술과 소통을 연결하는 풀스택 루키 개발자, 문승연입니다.</div>
+    <div class="keyword-cards">
+      <div class="keyword-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">문제 해결력</div>
+          <div class="card-back">현장의 문제를 파악하고 능동적으로 해결 방안을 제시한 경험. 실제 현장 문제에서 출발한 기술 기획 경험을 보유.</div>
+        </div>
+      </div>
+      <div class="keyword-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">소통 기반 협업가</div>
+          <div class="card-back">팀워크와 커뮤니케이션을 중시하며, 조직 내 갈등 상황 조율 및 팀워크 유지 경험. 중립적 소통자.</div>
+        </div>
+      </div>
+      <div class="keyword-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">성장형 풀스택 개발자</div>
+          <div class="card-back">프론트부터 백엔드까지 다양한 기술 스택 학습 중. React, JavaScript, Flutter, Python 등 실무형 프로젝트 경험.</div>
+        </div>
+      </div>
+      <div class="keyword-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">실행력 있는 기획자</div>
+          <div class="card-back">발상에 그치지 않고, 실제 어플리케이션을 직접 기획·설계·구현까지 도전. 재고 관리 앱 등 실제 문제 해결 프로젝트 수행.</div>
+        </div>
+      </div>
+      <div class="keyword-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">사용자 중심 문제 해결</div>
+          <div class="card-back">기술을 넘어 실제 사용자의 니즈를 파악하고, 사용자 중심의 문제 해결을 지향. GenAI 기반 웹서비스, 현장형 프로젝트 경험.</div>
+        </div>
+      </div>
+      <div class="keyword-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">보안 고려 아키텍처</div>
+          <div class="card-back">확장 가능하고 안전한 시스템 아키텍처 설계 경험. AWS 연동, 데이터 암호화 등 보안 강화 설계.</div>
+        </div>
+      </div>
+      <div class="keyword-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">UX 발상력</div>
+          <div class="card-back">비개발 환경에서도 공감 가능한 UX 설계. 사용자 관점에서 직관적이고 접근하기 쉬운 경험을 설계하는 창의적 사고력.</div>
+        </div>
+      </div>
+      <div class="keyword-card" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">커뮤니케이션/리더십</div>
+          <div class="card-back">갈등 상황에서도 중재와 설득을 통해 조용한 리더십 발휘. 팝업 매장 운영, 팀 프로젝트 리더 경험.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.keyword-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+          card.classList.toggle('flipped');
+        });
+        card.addEventListener('mouseenter', function() {
+          card.classList.add('flipped');
+        });
+        card.addEventListener('mouseleave', function() {
+          card.classList.remove('flipped');
+        });
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            card.classList.toggle('flipped');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
